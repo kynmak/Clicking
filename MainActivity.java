@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 
         if((total - autovalue*10000) >= 0) {
             total -= autovalue * 10000;
-            autovalue += 0.001 * value;
+            autovalue += 0.001*value;
             TextView TextAuto = (TextView)
                     findViewById(R.id.TextAuto);            //displays autoclicks per second
             TextAuto.setText(Double.toString(round(autovalue * 1000, 2)));

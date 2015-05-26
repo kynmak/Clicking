@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
     }
 
     public void timer() {
-        CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {       //we use this as a counter/timer for auto clicks
+        CountDownTimer countDownTimer = new CountDownTimer(50000, 1000) {       //we use this as a counter/timer for auto clicks
 
         @Override
         public void onTick(long millisUntilFinished) {
@@ -81,8 +81,8 @@ public class MainActivity extends Activity {
     }
 
     public void upgradeClick(View v) {              //'upgrades' value by increasing it
-        if((total - value) >= 0)  {                 //checks if you have enough money for upgrades
-            total -= value;
+        if((total - value*1.3) >= 0)  {                 //checks if you have enough money for upgrades
+            total -= value*1.3;
             value++;
             TextView TextValue = (TextView)                 //displays value per click
                     findViewById(R.id.TextValue);
@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 
         if((total - autovalue*10000) >= 0) {
             total -= autovalue * 10000;
-            autovalue += 0.001*value;
+            autovalue += 0.001*0.1*value;
             TextView TextAuto = (TextView)
                     findViewById(R.id.TextAuto);            //displays autoclicks per second
             TextAuto.setText(Double.toString(round(autovalue * 1000, 2)));
